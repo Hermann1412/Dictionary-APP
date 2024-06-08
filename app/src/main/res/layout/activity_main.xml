@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <!-- Search input -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Search input field -->
+        <EditText
+            android:id="@+id/search_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Type your word here"
+            android:background="@drawable/rounded_corner"
+            android:padding="12dp"
+            android:layout_toLeftOf="@id/search_btn"/>
+
+        <!-- Search button -->
+        <Button
+            android:id="@+id/search_btn"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="8dp"
+            android:textColor="@color/teal_200"/>
+
+        <!-- Progress bar (hidden by default) -->
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="100dp"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:indeterminateTint="@color/my_primary"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+    <!-- Word text view -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_history_list"
+        android:layout_width="220dp"
+        android:layout_height="83dp"
+        android:layout_marginTop="8dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    <TextView
+        android:id="@+id/word_textview"
+        android:layout_width="259dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="#1565C0"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+
+    <!-- Meaning RecyclerView -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/meaning_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+
+</LinearLayout>
